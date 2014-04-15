@@ -2,19 +2,26 @@
  * @jsx React.DOM
  */
 
+
+var rot13 = function (s) {
+    return s.replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
+}
+
 var InputComponent = React.createClass({
 
-    submit: function (event) {
-        this.props.updateHandler(this.refs.inputField.getDOMNode().value);
+    changeHandler: function (event) {
+        // this.props.updateHandler(this.refs.inputField.getDOMNode().value);
+        this.props.updateHandler(event.target.value);
         event.preventDefault();
     },
 
     render: function () {
         return (
-            <form >
+            <form>
                 <input
-                    ref="inputField"
-                    onChange={ this.submit }
+                    // ref="inputField"
+                    value={ this.props.value }
+                    onChange={ this.changeHandler }
                 />
             </form>
         );
@@ -22,10 +29,23 @@ var InputComponent = React.createClass({
 });
 
 var OuputComponent = React.createClass({
+    changeHandler: function (event) {
+        this.props.updateHandler(event.target.innerHTML);
+        event.preventDefault();
+    },
+    toggleContentEditable: function (event) {
+        var editable = !event.target.isContentEditable + "";
+        event.target.contentEditable = editable;
+        console.log(editable);
+    },
     render: function () {
         return (
-            <div>
-                { this.props.outValue }
+            <div
+                title={this.props.outValue}
+                onClick={ this.toggleContentEditable }
+                onBlur={ this.changeHandler }
+            >
+                { rot13(this.props.outValue) }
             </div>
         );
     }
@@ -40,6 +60,7 @@ var ExampleApp = React.createClass({
     },
 
     updateValue: function (newValue) {
+        // this.props.value = newValue
         this.setState({
             value: newValue
         })
@@ -50,8 +71,10 @@ var ExampleApp = React.createClass({
             <div>
                 <InputComponent
                     updateHandler={ this.updateValue }
+                    value={ this.state.value }
                 />
                 <OuputComponent
+                    updateHandler={ this.updateValue }
                     outValue={ this.state.value }
                 />
             </div>
@@ -59,7 +82,12 @@ var ExampleApp = React.createClass({
     }
 });
 
-React.renderComponent(
-    <ExampleApp />,
-    document.getElementById("app")
-);
+var start = new Date().getTime();
+
+// setInterval(function () {
+    React.renderComponent(
+        <ExampleApp />,
+        // <ExampleApp value={new Date().getTime() - start}/>,
+        document.body
+    );
+// }, 500);

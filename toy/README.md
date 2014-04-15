@@ -78,5 +78,13 @@ The `ref` attr lets you name your sub-components so that parent components can a
 And, `getDOMNode` is a React method that gives you access to the DOM element.
 (Remember: React components are *not* DOM elements. They are functions that return representations of DOM elements.)
 
+# Owners (a definition)
+
 # React Developer Tools
+
+You can play with a component's state and see the component (and any affected sub-components) update.
+If you change a component's props, the next time its owner(/parent) re-renders, the prop will get overwritten.
+
+The component that triggered a breakpoint will be highlighted.
+Shift + Up will take you to a component's owner.
 

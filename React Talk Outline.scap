@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ScappleDocument Version="1.1" ID="2F170DA8-8F06-495D-A253-CC4E0AB9F9B2">
+    <Notes>
+        <Note ID="0" FontSize="31.0" Position="97.957031,410.0" Width="274.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>Why should I care?</String>
+        </Note>
+        <Note ID="1" FontSize="12.0" Position="275.824219,478.0" Width="74.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>components</String>
+        </Note>
+        <Note ID="2" FontSize="12.0" Position="275.824219,506.0" Width="51.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>reactive</String>
+        </Note>
+        <Note ID="3" FontSize="12.0" Position="228.824219,559.0" Width="105.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>heavily developed</String>
+        </Note>
+        <Note ID="4" FontSize="12.0" Position="287.824219,594.0" Width="183.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>being used live on facebook.com</String>
+        </Note>
+        <Note ID="5" FontSize="22.0" Position="1037.699219,1236.898438" Width="246.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>Cool. How does it work?</String>
+        </Note>
+        <Note ID="6" FontSize="12.0" Position="1301.546875,1278.398438" Width="47.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>.render</String>
+        </Note>
+        <Note ID="7" FontSize="12.0" Position="1370.046875,1307.398438" Width="58.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>JSX</String>
+            <ConnectedNoteIDs>51</ConnectedNoteIDs>
+            <PointsToNoteIDs>51</PointsToNoteIDs>
+        </Note>
+        <Note ID="8" FontSize="12.0" Position="1223.546875,1288.398438" Width="72.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>createClass</String>
+        </Note>
+        <Note ID="9" FontSize="12.0" Position="1326.546875,1362.398438" Width="39.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>props</String>
+        </Note>
+        <Note ID="10" FontSize="12.0" Position="1326.546875,1390.398438" Width="75.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>on* (Events)</String>
+        </Note>
+        <Note ID="11" FontSize="23.0" Position="652.214844,118.296875" Width="265.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>Ok. Show me something.</String>
+        </Note>
+        <Note ID="12" FontSize="12.0" Position="98.824219,227.601563" Width="63.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>Diagrams!</String>
+        </Note>
+        <Note ID="13" FontSize="12.0" Position="98.824219,255.601563" Width="129.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>nesting of components</String>
+        </Note>
+        <Note ID="14" FontSize="12.0" Position="98.824219,283.601563" Width="200.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>why separation of view code and templates is actually bad</String>
+        </Note>
+        <Note ID="15" FontSize="12.0" Position="195.824219,694.0" Width="200.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>reading/writing from DOM is sloooow</String>
+        </Note>
+        <Note ID="16" FontSize="12.0" Position="195.824219,736.0" Width="180.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>JavaScript is super fast, actually</String>
+            <ConnectedNoteIDs>18</ConnectedNoteIDs>
+            <PointsToNoteIDs>18</PointsToNoteIDs>
+        </Note>
+        <Note ID="18" FontSize="12.0" Position="206.910156,821.753906" Width="140.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>dom round trips are slow</String>
+            <ConnectedNoteIDs>16</ConnectedNoteIDs>
+        </Note>
+        <Note ID="19" FontSize="15.0" Position="535.957031,1227.375" Width="180.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>things you should know</String>
+            <Formatting>
+                <FormatRange Bold="Yes">0,22</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="20" FontSize="12.0" Position="649.566406,1276.390625" Width="31.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>JSX</String>
+            <ConnectedNoteIDs>21</ConnectedNoteIDs>
+            <PointsToNoteIDs>21</PointsToNoteIDs>
+        </Note>
+        <Note ID="21" FontSize="12.0" Position="743.957031,1338.695312" Width="143.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1" Style="Square"></Border>
+            </Appearance>
+            <String>    &lt;script type="text/jsx"&gt;
+      /**
+       * @jsx React.DOM
+       */
+    &lt;/script&gt;</String>
+            <ConnectedNoteIDs>20, 22, 52</ConnectedNoteIDs>
+            <PointsToNoteIDs>52</PointsToNoteIDs>
+        </Note>
+        <Note ID="22" FontSize="12.0" Position="710.609375,1504.0" Width="186.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>note the comment. you need this.</String>
+            <ConnectedNoteIDs>21</ConnectedNoteIDs>
+        </Note>
+        <Note ID="23" FontSize="12.0" Position="652.0,322.0" Width="82.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>or, two scripts</String>
+        </Note>
+        <Note ID="24" FontSize="12.0" Position="785.910156,199.585937" Width="107.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>React.createClass</String>
+        </Note>
+        <Note ID="25" FontSize="12.0" Position="834.261719,232.476562" Width="47.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>.render</String>
+            <ConnectedNoteIDs>29</ConnectedNoteIDs>
+            <PointsToNoteIDs>29</PointsToNoteIDs>
+        </Note>
+        <Note ID="27" FontSize="12.0" Position="730.738281,177.574219" Width="89.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>include react.js</String>
+        </Note>
+        <Note ID="29" FontSize="12.0" Position="927.265625,234.074219" Width="185.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>returns React.DOM.&lt;something&gt;</String>
+            <ConnectedNoteIDs>25</ConnectedNoteIDs>
+        </Note>
+        <Note ID="30" FontSize="12.0" Position="786.953125,394.53125" Width="107.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>React.createClass</String>
+        </Note>
+        <Note ID="31" FontSize="12.0" Position="833.082031,440.042969" Width="47.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>.render</String>
+            <ConnectedNoteIDs>33</ConnectedNoteIDs>
+            <PointsToNoteIDs>33</PointsToNoteIDs>
+        </Note>
+        <Note ID="32" FontSize="12.0" Position="684.085938,344.476562" Width="190.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>include react.js &amp; JSXTransformer</String>
+        </Note>
+        <Note ID="33" FontSize="12.0" Position="926.0,442.0" Width="131.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>returns &lt;TaggyThings&gt;</String>
+            <ConnectedNoteIDs>31</ConnectedNoteIDs>
+        </Note>
+        <Note ID="34" FontSize="12.0" Position="790.957031,269.234375" Width="140.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>React.renderComponent</String>
+        </Note>
+        <Note ID="35" FontSize="12.0" Position="796.519531,478.332031" Width="140.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>React.renderComponent</String>
+        </Note>
+        <Note ID="36" FontSize="12.0" Position="776.257812,543.839844" Width="200.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>difference? you can write what looks like HTML</String>
+        </Note>
+        <Note ID="37" FontSize="12.0" Position="776.0,586.0" Width="175.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>why would you want to do this?</String>
+        </Note>
+        <Note ID="38" FontSize="12.0" Position="832.871094,609.617188" Width="200.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>because you can more easily reference other components</String>
+        </Note>
+        <Note ID="39" FontSize="12.0" Position="685.652344,367.949219" Width="130.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>&lt;script type="text/jsx"&gt;</String>
+        </Note>
+        <Note ID="40" FontSize="12.0" Position="615.828125,696.914062" Width="326.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>An alternative to JSX: Raw JavaScript API</String>
+        </Note>
+        <Note ID="41" FontSize="12.0" Position="606.523438,730.0" Width="87.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>Or, precompile</String>
+            <ConnectedNoteIDs>45</ConnectedNoteIDs>
+            <PointsToNoteIDs>45</PointsToNoteIDs>
+        </Note>
+        <Note ID="42" FontSize="12.0" Position="640.609375,856.289062" Width="200.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>If you put it in an external file, you have to use a proper HTTP server.</String>
+        </Note>
+        <Note ID="43" FontSize="21.0" Position="805.738281,896.664062" Width="58.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>why?</String>
+        </Note>
+        <Note ID="44" FontSize="12.0" Position="659.085938,762.789062" Width="283.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>npm install -g react-tools
+
+cd examples/basic-jsx-precompile/
+
+jsx . build/
+</String>
+        </Note>
+        <Note ID="45" FontSize="12.0" Position="974.957031,729.765625" Width="89.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>with react-tools</String>
+            <ConnectedNoteIDs>41</ConnectedNoteIDs>
+        </Note>
+        <Note ID="46" FontSize="12.0" Position="610.21875,991.554688" Width="200.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>so, you can also use React styled by a popular UI lib</String>
+        </Note>
+        <Note ID="47" FontSize="12.0" Position="1197.085938,576.214844" Width="200.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>all event handling is actually event delegation attached to the root node!</String>
+        </Note>
+        <Note ID="48" FontSize="12.0" Position="619.609375,391.855469" Width="129.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>/** @jsx React.DOM */</String>
+        </Note>
+        <Note ID="49" FontSize="12.0" Position="586.0,1614.0" Width="200.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <TextColor>0.150563 0.150559 0.150561</TextColor>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>props.id is added for you with unique(ish) ids provided by React</String>
+        </Note>
+        <Note ID="50" FontSize="12.0" Position="1555.304688,1369.433594" Width="149.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String># prerequisite
+# npm install -g react-tools
+
+jsx scr/ build/
+
+# continuously
+jsx --watch src/ build/
+watch "jsx src/ build/"
+</String>
+        </Note>
+        <Note ID="51" FontSize="12.0" Position="1515.476562,1336.550781" Width="129.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>building (vs. on the fly)</String>
+            <ConnectedNoteIDs>7</ConnectedNoteIDs>
+        </Note>
+        <Note ID="52" FontSize="12.0" Position="1084.0,1522.0" Width="108.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>transform example</String>
+            <ConnectedNoteIDs>21</ConnectedNoteIDs>
+            <Formatting>
+                <FormatRange Link="file:///Users/chrisaquino/Learning/react/Slides.html#39">0,17</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="53" FontSize="12.0" Position="225.742188,1454.269531" Width="122.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>server-side rendering</String>
+            <ConnectedNoteIDs>58</ConnectedNoteIDs>
+            <PointsToNoteIDs>58</PointsToNoteIDs>
+        </Note>
+        <Note ID="54" FontSize="12.0" Position="263.0,1493.0" Width="169.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>Node.js, and another example</String>
+            <Formatting>
+                <FormatRange Link="https://github.com/petehunt/react-server-rendering-example">0,7</FormatRange>
+                <FormatRange Link="https://github.com/adelevie/react-client-server-starter">13,15</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="55" FontSize="12.0" Position="263.0,1519.574219" Width="88.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>ASP.NET MVC</String>
+            <Formatting>
+                <FormatRange Link="http://facebook.github.io/react/blog/2014/04/04/reactnet.html">0,11</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="56" FontSize="12.0" Position="263.0,1557.015625" Width="61.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>react-rails</String>
+            <Formatting>
+                <FormatRange Link="https://github.com/reactjs/react-rails">0,11</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="57" FontSize="12.0" Position="263.0,1585.0" Width="99.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>React-PHP-V8Js</String>
+            <Formatting>
+                <FormatRange Link="https://github.com/reactjs/react-php-v8js">0,14</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="58" FontSize="12.0" Position="100.4375,1578.382812" Width="65.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>why? SEO</String>
+            <ConnectedNoteIDs>53</ConnectedNoteIDs>
+        </Note>
+        <Note ID="60" FontSize="12.0" Position="1358.0,972.0" Width="170.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>browserify + react === reactify</String>
+            <Formatting>
+                <FormatRange Link="https://github.com/andreypopp/reactify">0,31</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="61" FontSize="12.0" Position="1178.0,1745.0" Width="156.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>Isomorphic JavaScript apps</String>
+        </Note>
+        <Note ID="62" FontSize="12.0" Position="1178.0,1773.0" Width="127.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>functional reactive UIs</String>
+        </Note>
+        <Note ID="63" FontSize="22.0" Position="1123.042969,1689.730469" Width="120.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Style="Square"></Border>
+            </Appearance>
+            <String>The dream</String>
+            <Formatting>
+                <FormatRange Bold="Yes">0,9</FormatRange>
+            </Formatting>
+        </Note>
+    </Notes>
+    <BackgroundShapes></BackgroundShapes>
+    <Stacks>
+        <Stack>1-2</Stack>
+        <Stack>9-10</Stack>
+        <Stack>12-14</Stack>
+        <Stack>15-16</Stack>
+        <Stack>36-37</Stack>
+        <Stack>54-55</Stack>
+        <Stack>56-57</Stack>
+        <Stack>61-62</Stack>
+    </Stacks>
+    <AutoFit>0-6, 8-13, 16, 18-25, 27, 29-35, 37, 39, 41, 43, 45, 48, 50-58, 60-63</AutoFit>
+    <NoteStyles>
+        <Style Name="Blue Bubble" ID="1F3BCA3D-FC9E-4CCD-9EEE-85242A4E6305" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.477193 0.557066 0.76433</BorderColor>
+            <FillColor>0.840969 0.866828 0.925903</FillColor>
+        </Style>
+        <Style Name="Brown Bubble" ID="CE74FB6E-0DF4-4732-BB95-81FCD0C4F140" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.290055 0.1523 0.182215</BorderColor>
+            <FillColor>0.940019 0.892907 0.779716</FillColor>
+        </Style>
+        <Style Name="Green Bubble" ID="0CC01232-96FB-4003-B54F-A93EC85C999F" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.331867 0.609932 0.356197</BorderColor>
+            <FillColor>0.790123 0.882327 0.80198</FillColor>
+        </Style>
+        <Style Name="Pink Bubble" ID="308B8075-00DF-4CD1-8102-C15896A767D8" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.747881 0.366532 0.542813</BorderColor>
+            <FillColor>0.918452 0.807302 0.863467</FillColor>
+        </Style>
+        <Style Name="Red Text" ID="D276C2DA-801E-4FC1-A869-1E50B1F377A4" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="Yes" AffectNoteBody="No" AffectFade="No">
+            <TextColor>1.0 0.0 0.0</TextColor>
+        </Style>
+        <Style Name="Title Text" ID="B803EC46-2F4E-4ECB-A6D9-F11B33F99EBB" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="No" AffectNoteBody="No" AffectFade="No">
+            <FontSize>28.0</FontSize>
+            <IsBold>Yes</IsBold>
+        </Style>
+        <Style Name="Yellow Bubble" ID="A623AA1B-830A-418E-9BE6-832DEFEB671C" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.756763 0.785592 0.373258</BorderColor>
+            <FillColor>0.906773 0.910625 0.634363</FillColor>
+        </Style>
+    </NoteStyles>
+    <UISettings>
+        <BackgroundColor>0.999737 0.986332 0.931298</BackgroundColor>
+        <DefaultFont>Helvetica</DefaultFont>
+        <DefaultTextColor>0.0 0.0 0.0</DefaultTextColor>
+    </UISettings>
+    <PrintSettings PaperSize="611.999985,792.0" LeftMargin="72.0" RightMargin="72.0" TopMargin="90.0" BottomMargin="90.0" PaperType="na-letter" Orientation="Portrait" HorizontalPagination="Clip" VerticalPagination="Auto" ScaleFactor="1.0" HorizontallyCentered="Yes" VerticallyCentered="Yes" Collates="Yes" PagesAcross="1" PagesDown="1"></PrintSettings>
+</ScappleDocument>

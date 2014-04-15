@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <title>Slides</title>
+    <script>
+    // poly
+    Function.prototype.bind = Function.prototype.bind || function (thisp) {
+      var fn = this;
+      return function () {
+        return fn.apply(thisp, arguments);
+      };
+    };
+    </script>
+    <link rel="stylesheet" href="Slides_files/styles.css" type="text/css">
+  </head>
+  <body>
+    <script type="code/examples" id="examples">
+//// table
+var table = document.createElement('table');
+var tr = document.createElement('tr');
+var td = document.createElement('td');
+var text = document.createTextNode('some data');
+td.appendChild(text);
+td = document.createElement('td');
+text = document.createTextNode('some more data');
+td.appendChild(text);
+tr.appendChild(td);
+table.appendChild(tr); // ..............
+
+
+    
+    
+//// component
+React.renderComponent(
+  MyWidget({type: "amazing"}),
+  document.getElementById('app')
+);
+
+//// more_component
+React.renderComponent(
+  MyWidget({type:"awesome"}, 
+    PrettyHead({title:"hello"}),
+    Body(null, 
+      React.DOM.p(null, React.DOM.span(null, "Content"))
+    )
+  ),
+  document.getElementById('app')
+);
+
+
+//// jsx
+/** @jsx React.DOM */
+React.renderComponent(
+  <MyWidget type="awesome">
+    <PrettyHead title="hello"/>
+    <Body>
+      <p><span>Content</span></p>
+    </Body>
+  </MyWidget>,
+  document.getElementById('app')
+);
+
+
+
+//// hello-html
+<!DOCTYPE html>
+<html>
+  <head><title>hello react</title></head>
+  <body>
+    <div id="app"></div>
+    <script src="build/react.min.js"></scr ipt>
+    <script src="build/hello.js"></scr ipt>
+  </body>
+</html>
+
+//// hello-jsx
+/** @jsx React.DOM */
+React.renderComponent(
+  <h1>Hello world!</h1>,
+  document.getElementById('app')
+);
+
+//// build
+# prerequisite
+# npm install -g react-tools
+
+jsx scr/ build/
+
+# continuously
+jsx --watch src/ build/
+watch "jsx src/ build/"
+
+//// jsx-on-the-fly
+<!DOCTYPE html>
+<html>
+  <head><title>hello react</title></head>
+  <body>
+    <div id="app"></div>
+    <script src="build/react.min.js"></scr ipt>
+    <script src="build/JSXTransformer.js"></scr ipt>
+    <script type="text/jsx" src="src/hello.js"></scr ipt>
+  </body>
+</html>
+
+
+//// hello-js
+/** @jsx React.DOM */
+React.renderComponent(
+  React.DOM.h1(null, "Hello world!"),
+  document.getElementById('app')
+);
+
+//// widget
+React.renderComponent(
+  <MyWidget type="awesome">
+    <PrettyHead title="hello"/>
+    <Body>
+      <p><span>Content</span></p>
+    </Body>
+  </MyWidget>,
+  document.getElementById('app')
+);
+
+
+//// slide
+React.renderComponent(
+  <Slide title="Hello">
+    <List items={["Oi", "Hola", "Salut"]} />
+  </Slide>,
+  document.getElementById('slideshow')
+);
+
+
+//// slide-component
+var Slide = React.createClass({
+  render: function() {
+    return (
+      <div class="slide">
+        <h1>{this.props.title}</h1>
+        {this.props.children}
+      </div>
+    );
+  }
+});
+
+
+//// list
+var List = React.createClass({
+  getInitialState: function() {
+    return {items: this.props.items};
+  },
+  render: function() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+      <ul>
+        {this.state.items.map(function(item) {
+          return <li>{item}</li>;
+        })}
+        <li><input ref="input" onChange={this.handleChange} /></li>
+      </ul>
+      </form>
+    );
+  }
+});
+
+
+//// list-handlers
+preview: false,
+
+handleChange: function (e) {
+  var items = this.state.items;
+  this.preview 
+    ? items[items.length - 1] = e.target.value
+    : items.push(e.target.value);
+  this.setState({items: items});
+  this.preview = true;
+},
+
+handleSubmit: function (e) {
+  this.preview = false;
+  this.refs.input.getDOMNode().value = '';
+  return false;
+},
+
+//// composition
+<Slide>
+  <Items />
+  <Weirdo height="full">
+</Slide>
+
+
+//// mixin
+var bagofstuff = {
+  foo: function () {}
+  bar: "high"
+};
+
+var Compo = React.createClass({
+  mixins: [bagofstuff, another], // mix-in
+  /// ...
+});
+
+
+
+    </script>
+    <script>
+    var EXAMPLES = {};
+    (function () {
+      var src = document.getElementById('examples').textContent;
+      src.trim().split('////').forEach(function(line) {
+        if (!line) return;
+        var parts = line.split('\n');
+        var title = parts.shift().trim();
+        EXAMPLES[title] = parts.join('\n').trim().replace(/scr ipt/g, 'script');
+      });
+    }());
+    </script>
+    <div id="slideshow"><div class="currentSlide whole" tabindex="1" data-reactid=".r[1neyn]"><div class="slide whole trans" data-reactid=".r[1neyn].{24}"><div class="line" data-reactid=".r[1neyn].{24}.[0]"><p data-reactid=".r[1neyn].{24}.[0].[0]"><span data-reactid=".r[1neyn].{24}.[0].[0].[0]">Hello world</span></p></div><div class="underline" data-reactid=".r[1neyn].{24}.[1]"></div></div></div></div>
+    <script src="Slides_files/react.js"></script>
+    <script src="Slides_files/JSXTransformer.js"></script>
+    <script src="Slides_files/transphormador.js"></script>
+    <script src="Slides_files/slides.js"></script>
+    <script>
+
+    </script>
+  
+</body></html>
