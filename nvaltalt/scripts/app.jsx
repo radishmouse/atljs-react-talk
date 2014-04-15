@@ -3,18 +3,43 @@
  */
 
 var Editor = React.createClass({
+    // getInitialState: function () {
+    //     return {
+    //         value: this.props.document.content
+    //     };
+    // },
+    handleChange: function (evt) {
+        // this.setState({
+        //     value: evt.target.value
+        // });
+        this.props.updateDocumentContent({
+            title: this.props.document.title,
+            content: evt.target.value
+        });
+    },
     render: function () {
+        console.log(this.props.document.content);
+        // console.log(this.state.value);
         return (
-            <textarea value={ this.props.document.content }></textarea>
+            <textarea
+                value={ this.props.document.content }
+                onChange={ this.handleChange }
+            ></textarea>
         );
     }
 });
 
 var DocumentRow = React.createClass({
+    handleClick: function () {
+        this.props.handleClick(this.props.key);
+    },
     render: function () {
         var styleObject = this.props.key % 2 == 0 ? {} : { backgroundColor: "#ccc" };
         return (
-            <tr style={ styleObject }>
+            <tr
+                style={ styleObject }
+                onClick={ this.handleClick }
+            >
                 <td>
                     { this.props.title }
                 </td>
@@ -25,11 +50,14 @@ var DocumentRow = React.createClass({
 
 var DocumentList = React.createClass({
     selectDocument: function (document) {
+        document = typeof document == "number" ? this.props.documents[document] : document;
+
         setTimeout(function () {
             this.props.setCurrentDocument(document);
         }.bind(this), 0)
     },
     render: function () {
+        console.log("re-rendering!");
         var documents = this.props.documents;
 
         if (this.props.filterText.length > 0) {
@@ -41,15 +69,16 @@ var DocumentList = React.createClass({
                 }
             }.bind(this));
 
-            if (documents.length > 0) {
-                // Select the first one
-                this.selectDocument(documents[0]);
-            }
+            // if (documents.length > 0) {
+            //     // Select the first one
+            //     this.selectDocument(documents[0]);
+            //     console.log("selecting a document");
+            // }
         }
 
         var rows = documents.map(function (document, i) {
-            return <DocumentRow key={i} title={ document.title} />;
-        });
+            return <DocumentRow key={i} title={ document.title } handleClick={ this.selectDocument }/>;
+        }.bind(this));
 
         return (
             <table>
@@ -77,7 +106,15 @@ var SearchClear = React.createClass({
 });
 
 var SearchInput = React.createClass({
+    // getInitialState: function () {
+    //     return {
+    //         value: this.props.filterText
+    //     };
+    // },
     handleChange: function (evt) {
+        // this.setState({
+        //     value: evt.target.value
+        // });
         this.props.setSearchText(evt.target.value);
     },
     render: function () {
@@ -120,6 +157,10 @@ var nvAltApp = React.createClass({
         this.setState({
             filterText: value
         });
+
+        if (value.length == 0 ) {
+            this.didChangeCurrentDocument(EMPTY_DOC);
+        }
     },
 
     didChangeCurrentDocument: function (doc) {
@@ -127,19 +168,47 @@ var nvAltApp = React.createClass({
             currentDocument: doc
         });
     },
+    didChangeCurrentDocumentContent: function (document) {
+        this.setState({
+            currentDocument: {
+                title: document.title,
+                content: document.content
+            },
+            docs: this.state.docs.map(function (doc) {
+                console.log("looking at: " + doc.title);
+                console.log("comparing to: " + document.title);
+                if (doc.title == document.title) {
+                    console.log("updating the content")
+                    doc.content = document.content
+                }
+                return doc;
+            })
+        });
+
+
+    },
     render: function () {
+
+        var searchBar = (<SearchBar
+            filterText={ this.state.filterText }
+            setSearchText={ this.didChangeSearchText }
+        />);
+        var documentList = (<DocumentList
+            filterText={ this.state.filterText }
+            documents={ this.state.docs }
+            setCurrentDocument={ this.didChangeCurrentDocument }
+        />)
+        var editor = (<Editor
+            // document={ (this.state.filterText) ? this.state.currentDocument : EMPTY_DOC }
+            document={ (this.state.filterText || this.state.currentDocument.title) ? this.state.currentDocument : EMPTY_DOC }
+            updateDocumentContent={ this.didChangeCurrentDocumentContent }
+        />)
+
         return (
             <div>
-                <SearchBar
-                    filterText={ this.state.filterText }
-                    setSearchText={ this.didChangeSearchText }
-                />
-                <DocumentList
-                    filterText={ this.state.filterText }
-                    documents={ this.state.docs }
-                    setCurrentDocument={ this.didChangeCurrentDocument }
-                />
-                <Editor document={ this.state.filterText ? this.state.currentDocument : EMPTY_DOC } />
+                {searchBar}
+                {documentList}
+                {editor}
             </div>
         );
     }
