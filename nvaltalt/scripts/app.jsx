@@ -3,23 +3,13 @@
  */
 
 var Editor = React.createClass({
-    // getInitialState: function () {
-    //     return {
-    //         value: this.props.document.content
-    //     };
-    // },
     handleChange: function (evt) {
-        // this.setState({
-        //     value: evt.target.value
-        // });
         this.props.updateDocumentContent({
             title: this.props.document.title,
             content: evt.target.value
         });
     },
     render: function () {
-        console.log(this.props.document.content);
-        // console.log(this.state.value);
         return (
             <textarea
                 value={ this.props.document.content }
@@ -49,36 +39,32 @@ var DocumentRow = React.createClass({
 });
 
 var DocumentList = React.createClass({
-    selectDocument: function (document) {
-        document = typeof document == "number" ? this.props.documents[document] : document;
+    selectDocument: function (doc) {
+        doc = typeof doc == "number" ? this.props.documents[doc] : doc;
 
         setTimeout(function () {
-            this.props.setCurrentDocument(document);
+            this.props.setCurrentDocument(doc);
         }.bind(this), 0)
     },
     render: function () {
-        console.log("re-rendering!");
         var documents = this.props.documents;
-
+        var rows;
         if (this.props.filterText.length > 0) {
-            documents = this.props.documents.filter(function (doc) {
+            rows = this.props.documents.map(function (doc, i) {
                 if (this.props.filterText.length > 0) {
                     var passesFilter = (doc.title.toLowerCase().indexOf(this.props.filterText.toLowerCase()) != -1) ||
                                        (doc.content.toLowerCase().indexOf(this.props.filterText.toLowerCase()) != -1);
-                    return passesFilter;
+                    if (passesFilter) {
+                        return <DocumentRow key={i} title={ doc.title } handleClick={ this.selectDocument }/>;
+                    }
                 }
             }.bind(this));
 
-            // if (documents.length > 0) {
-            //     // Select the first one
-            //     this.selectDocument(documents[0]);
-            //     console.log("selecting a document");
-            // }
+        } else {
+            rows = documents.map(function (doc, i) {
+                return <DocumentRow key={i} title={ doc.title } handleClick={ this.selectDocument }/>;
+            }.bind(this));
         }
-
-        var rows = documents.map(function (document, i) {
-            return <DocumentRow key={i} title={ document.title } handleClick={ this.selectDocument }/>;
-        }.bind(this));
 
         return (
             <table>
@@ -106,24 +92,16 @@ var SearchClear = React.createClass({
 });
 
 var SearchInput = React.createClass({
-    // getInitialState: function () {
-    //     return {
-    //         value: this.props.filterText
-    //     };
-    // },
     handleChange: function (evt) {
-        // this.setState({
-        //     value: evt.target.value
-        // });
         this.props.setSearchText(evt.target.value);
     },
     render: function () {
         return (
-                <input
-                    value={ this.props.filterText }
-                    onChange={ this.handleChange }
-                >
-                </input>
+            <input
+                value={ this.props.filterText }
+                onChange={ this.handleChange }
+            >
+            </input>
         );
     }
 });
@@ -168,18 +146,16 @@ var nvAltApp = React.createClass({
             currentDocument: doc
         });
     },
-    didChangeCurrentDocumentContent: function (document) {
+    didChangeCurrentDocumentContent: function (newCurrentDocument) {
         this.setState({
             currentDocument: {
-                title: document.title,
-                content: document.content
+                title: newCurrentDocument.title,
+                content: newCurrentDocument.content
             },
             docs: this.state.docs.map(function (doc) {
-                console.log("looking at: " + doc.title);
-                console.log("comparing to: " + document.title);
-                if (doc.title == document.title) {
+                if (doc.title == newCurrentDocument.title) {
                     console.log("updating the content")
-                    doc.content = document.content
+                    doc.content = newCurrentDocument.content
                 }
                 return doc;
             })
