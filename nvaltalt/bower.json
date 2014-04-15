@@ -1,0 +1,7 @@
+{
+  "name": "nvaltalt-react",
+  "version": "0.0.0",
+  "dependencies": {
+    "react": "~0.10.0"
+  }
+}
