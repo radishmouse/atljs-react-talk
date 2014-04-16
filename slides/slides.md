@@ -396,62 +396,6 @@ template: cover
 ```
 
 ---
-
-name: ni-hao-react
-class: small-code
-
-# Ni Hao, React
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <script src="../build/react.js"></script>
-    <script src="../build/JSXTransformer.js"></script>
-  </head>
-  <body>
-    <div id="example"></div>
-    <script type="text/jsx">
-      /** @jsx React.DOM
-      */
-      var MyComponent = React.createClass({
-        render: function() {
-          return (<h1>Ni hao, react</h1>);
-        }
-      });
-      React.renderComponent(
-        <MyComponent />,
-        document.getElementById('example')
-      );
-    </script>
-  </body>
-</html>
-```
-[demo](/ni-hao-react/index.html)
-
----
-
-# Enabling JSX Transformations
-
-```html
-  <script src="../build/react.js"></script>
-  <script src="../build/JSXTransformer.js"></script>
-```
-
---
-
-```html
-  <script type="text/jsx">
-    /** @jsx React.DOM
-    */
-
-    // React code goes here
-  </script>
-```
-
-???
-
----
 name: wait
 template: cover
 
@@ -570,6 +514,62 @@ React.renderComponent(<HelloMessage name="Professor Falken" />, mountNode);
 
 ---
 
+name: ni-hao-react
+class: small-code
+
+# Ni Hao, React
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/jsx">
+      /** @jsx React.DOM
+      */
+      var MyComponent = React.createClass({
+        render: function() {
+          return (<h1>Ni hao, react</h1>);
+        }
+      });
+      React.renderComponent(
+        <MyComponent />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
+```
+[demo](/ni-hao-react/index.html)
+
+---
+
+# Enabling JSX Transformations
+
+```html
+  <script src="../build/react.js"></script>
+  <script src="../build/JSXTransformer.js"></script>
+```
+
+--
+
+```html
+  <script type="text/jsx">
+    /** @jsx React.DOM
+    */
+
+    // React code goes here
+  </script>
+```
+
+???
+
+---
+
 # JSX Compiler
 
 ![](img/jsx-compiler.png)
@@ -588,7 +588,7 @@ template: cover
 
 ![](img/kung-fu.png)
 
-[/data-flow/final.html](/data-flow/)
+[demo](/data-flow/complete.html)
 
 ---
 
@@ -804,7 +804,7 @@ name: renderComponent
   var InputComponent = React.createClass({
       render: function () {
           return (
-            <input></input>
+              <input></input>
           );
       }
   });
@@ -944,11 +944,6 @@ name: state
   );
 ```
 [demo](/data-flow/state.html)
----
-name: events
-template: cover
-
-# Events
 
 ---
 class: small-code
@@ -1132,7 +1127,6 @@ class: small-code
 
 [demo](/data-flow/events2.html)
 
----
 name: finally
 # And now...Rot13
 
@@ -1189,6 +1183,341 @@ template: cover
 # React Developer Tools
 
 [demo](/data-flow/complete-buggy.html)
+
+---
+template: cover
+# Events
+---
+# Synthetic Event System
+
+--
+
+* Conforms to W3C Events
+
+--
+
+* Cross-browser
+
+--
+
+* Always delegated
+
+--
+
+* Declarative
+
+--
+* ^^--- there's that word again!
+
+???
+
+Even provides some HTML5 events to IE8
+---
+
+# Events, galore
+
+* Clipboard
+* Keyboard
+* Focus
+* Form
+* Mouse
+* Touch
+* UI
+* Wheel
+
+--
+
+## [Full list of Supported Events at facebook.github.io/react/docs/events.html](http://facebook.github.io/react/docs/events.html)
+
+
+---
+
+template: cover
+# George R. R. (R.) Martin meets nvAlt
+
+---
+
+# George R. R. Margin
+
+![](img/grrm.jpg)
+
+--
+
+## *Just finish the books, already!*
+
+---
+
+# nvAlt
+
+![](img/nvalt.png)
+
+---
+
+# Component breakdown
+
+![](img/nvalt-components.png)
+
+---
+
+# Component breakdown
+
+* App
+  * Search Bar
+      * Input
+      * Cancel
+  * Document List
+      * List Item
+  * Editor
+
+---
+# Component breakdown
+
+![](img/nvalt-breakdown.png)
+
+???
+
+Multiple list items!
+(Reusing components!)
+
+---
+
+# Data flows
+![](img/nvalt-flows.png)
+
+---
+
+# Brief(!) code walk
+
+[demo](/nvaltalt/)
+
+---
+template: cover
+# The story so far
+
+---
+
+# Now, you know how to:
+
+--
+
+* build and compose React components
+
+--
+
+* use (or not use) JSX
+
+--
+
+* debug with the React Developer Tools
+
+--
+
+* break down a problem into components
+
+--
+
+* create data flows using props, state, and events
+
+---
+
+# So what?
+## *What's one reason to use React?*
+---
+template: cover
+
+# Speed
+
+---
+# The task
+## Check and uncheck 1000 todos, 5 times
+
+---
+
+# Round 1: Backbone
+
+![](img/backbone.png)
+
+--
+
+# ~84s
+
+---
+
+# Round 2: Knockout.js
+
+![](img/knockout.png)
+
+--
+
+# ~45s
+
+---
+
+# Round 3: React
+
+
+![](img/react.png)
+
+--
+
+# ~270 ms
+
+
+---
+
+template: cover
+
+# Under the hood
+
+---
+
+# Virtual DOM
+
+--
+
+* in-memory DOM representation
+
+--
+
+* fast diffing algorithm
+
+--
+
+* updates on as needed
+
+---
+
+# Component Lifecycle
+
+* Mounting
+  * []()
+  * []()
+* Updating
+  * []()
+  * []()
+  * []()
+  * []()
+* Unmounting
+  * []()
+
+---
+
+# Component Lifecycle
+
+* Mounting
+  * componentWillMount
+  * componentDidMount
+* Updating
+  * componentWillReceiveProps
+  * shouldComponentUpdate
+  * componentWillUpdate
+  * componentDidUpdate
+* Unmounting
+  * componentWillUnmount
+
+---
+
+# Component Lifecycle
+
+* Mounting
+  * componentWillMount
+  * componentDidMount
+* Updating
+  * componentWillReceiveProps
+  * **shouldComponentUpdate**
+  * componentWillUpdate
+  * componentDidUpdate
+* Unmounting
+  * componentWillUnmount
+---
+
+template: cover
+# I want this now.
+
+---
+# Bindings to existing frameworks
+
+* Angular: [ngReact](http://davidchang.github.io/ngReact/)
+* Backbone: [backbone-react-component](http://magalhas.github.io/backbone-react-component/)
+* (*more are on their way*)
+
+---
+# Pre-compiling your JSX
+
+## react-tools
+
+```bash
+  $ npm install -g react-tools
+  $ jsx --watch src/ build/
+
+```
+
+---
+
+# Tooling integration
+
+* Gulp.js
+  * [gulp-react](https://www.npmjs.org/package/gulp-react)
+* Grunt
+  * [grunt-react](https://www.npmjs.org/package/grunt-react)
+
+
+---
+
+# Static rendering on the server
+
+* [react-rails](https://github.com/reactjs/react-rails)
+* [django-reactify](https://github.com/petehunt/django-reactify)
+* [react-php-v8js](https://github.com/reactjs/react-php-v8js)
+* [node.js (of course)](https://github.com/facebook/react/tree/master/examples/server-rendering)
+
+---
+
+template: cover
+
+# The future
+
+---
+
+# The dream
+## Isomorphic JavaScript
+
+###*JavaScript applications that can run both on the client-side and the server-side.*
+---
+
+
+# React is decoupled from browser
+
+* Virtual DOM
+* Synthetic Events
+
+---
+# Node.js + routing:
+
+* server renders a static version
+  * no lag before app initializes
+* browser applies event bindings
+  * acts like single page app
+
+--
+
+## *Single Page App + SEO with a single code base*
+
+---
+
+# Today
+
+![](img/nodejs1.png)
+???
+Credit: Nicholas C. Zakas
+---
+
+# Tomorrow
+
+![](img/nodejs2.png)
+???
+Credit: Nicholas C. Zakas
+
 
 ---
 
