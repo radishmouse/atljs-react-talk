@@ -12,6 +12,8 @@ tempalte: cover
 
 ## Chris Aquino, Big Nerd Ranch
 
+[http://bit.ly/atljs-react-2014](http://bit.ly/atljs-react-2014)
+
 ???
 # etc. (*coffee, bourbon, cats, bacon, sushi*)
 
@@ -872,6 +874,48 @@ class: small-code
   var OuputComponent = React.createClass({
       render: function () {
           return (
+              <div>                    </div>
+          );
+      }
+  });
+
+  var AppComponent = React.createClass({
+      render: function () {
+          return (
+            <div>
+                <InputComponent />
+                <OuputComponent                        />
+            </div>
+          );
+      }
+  });
+
+  React.renderComponent(
+    <AppComponent />,
+    document.getElementById('container')
+  );
+```
+
+
+
+---
+class: small-code
+
+# Passing values via .props
+
+
+```js
+  var InputComponent = React.createClass({
+      render: function () {
+          return (
+            <input></input>
+          );
+      }
+  });
+
+  var OuputComponent = React.createClass({
+      render: function () {
+          return (
               <div>{ this.props.value }</div>
           );
       }
@@ -1043,7 +1087,7 @@ class: small-code
 
 
 
-      },
+
       render: function () {
           return (
             <div>
