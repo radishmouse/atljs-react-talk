@@ -1,0 +1,47 @@
+
+// Typography
+
+.remark-slide-content {
+    @extend .skin-color-white;
+
+    h1 {
+        @include font-in-rems(4.8);
+        @include line-height-in-rems(6.5);
+    }
+
+    h2 {
+        color: $color-yellow;
+        font-family: $font-f-medium;
+    }
+}
+
+// Layout
+
+.footnote {
+    position: absolute;
+    bottom: 3em;
+    bottom: 3rem;
+}
+
+// Skin
+
+.remark-slide-content.small-code {
+    .remark-code {
+        @include font-in-rems(1.5);
+        @include line-height-in-rems(1.75);
+    }
+}
+.remark-slide-content.s-inverse {
+    @extend .skin-color-green;
+
+    h1 {
+        color: $color-white;
+    }
+
+    p {
+        color: $color-white;
+    }
+}
+
+
+

@@ -3,7 +3,7 @@
 let's start with a bower.json
 
     {
-      "name": "tinkle-react",
+      "name": "react-toy",
       "version": "0.10.0",
       "main": "react.js"
     }

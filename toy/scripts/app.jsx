@@ -84,10 +84,9 @@ var ExampleApp = React.createClass({
 
 var start = new Date().getTime();
 
-// setInterval(function () {
-    React.renderComponent(
-        <ExampleApp />,
-        // <ExampleApp value={new Date().getTime() - start}/>,
-        document.body
-    );
-// }, 500);
+
+React.renderComponent(
+    <ExampleApp />,
+    // <ExampleApp value={new Date().getTime() - start}/>,
+    document.body
+);

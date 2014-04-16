@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/jsx">
+      var ExampleApplication = React.createClass({
+        render: function() {
+          var elapsed = Math.round(this.props.elapsed  / 100);
+          var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0' );
+          var message = 'Hooray! Another year in ' + seconds + ' seconds.';
+          return React.DOM.h1(null, message);
+        }
+      });
+      var bday = new Date("April 18, 2014 08:12:00");
+      setInterval(function() {
+        React.renderComponent(
+          ExampleApplication({elapsed: bday.getTime() - new Date().getTime()}),
+          document.getElementById('container')
+        );
+      }, 50);
+      </script>
+  </body>
+</html>
