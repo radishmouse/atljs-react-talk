@@ -35,16 +35,10 @@ layout: false
 
 
 ???
-# Two very different roles
-* training
-* app development for consulting
+Two very different roles: training and app development for consulting
 
-# Always
-* evaluating new
-  * tools
-  * libraries
-  * frameworks
-* looking ahead
+Always evaluating new * tools * libraries * frameworks *
+And, always looking ahead
 
 
 ---
@@ -120,6 +114,8 @@ class: small-code
 </html>
 ```
 
+???
+Start with a plain HTML file
 ---
 
 
@@ -159,7 +155,8 @@ class: small-code
 </html>
 ```
 
-
+???
+Include React via script tags
 ---
 
 name: countdown
@@ -176,7 +173,7 @@ class: small-code
   </head>
   <body>
 
-    <script type="text/jsx">
+    <script>
       var ExampleApplication = React.createClass({
         render: function() {
           var elapsed = Math.round(this.props.elapsed  / 100);
@@ -196,7 +193,8 @@ class: small-code
   </body>
 </html>
 ```
-
+???
+Add the script
 
 ---
 
@@ -216,7 +214,7 @@ class: small-code
   </head>
   <body>
     <div id="container"></div>
-    <script type="text/jsx">
+    <script>
       var ExampleApplication = React.createClass({
         render: function() {
           var elapsed = Math.round(this.props.elapsed  / 100);
@@ -238,16 +236,19 @@ class: small-code
 ```
 [demo](/birthday)
 
+???
+Add the container to render to
+
 ---
 
 
 
 name: countdown
 
-# The script tag
+# The nitty-gritty
 
 ```html
-    <script type="text/jsx">
+    <script>
       var ExampleApplication = React.createClass({
         render: function() {
           return React.DOM.h1(null, "");
@@ -590,11 +591,20 @@ template: cover
 
 [demo](/data-flow/complete.html)
 
+???
+
+First, code demo.
+
+Then, the component breakdown.
+What components do we need?
+
+
 ---
 
 # Rot13 converter
 
 ![](img/kung-fu-components.png)
+
 
 
 ---
@@ -1362,7 +1372,6 @@ template: cover
 
 # ~270 ms
 
-
 ---
 
 template: cover
@@ -1516,8 +1525,8 @@ Credit: Nicholas C. Zakas
 
 ![](img/nodejs2.png)
 ???
-Credit: Nicholas C. Zakas
-
+Node.js is not replacing back end API.
+Just removing responsibility over the front end.
 
 ---
 
