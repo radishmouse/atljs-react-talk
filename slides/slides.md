@@ -12,7 +12,7 @@ tempalte: cover
 
 ## Chris Aquino, Big Nerd Ranch
 
-[http://bit.ly/atljs-react-2014](http://bit.ly/atljs-react-2014)
+[http://bit.ly/atljs-react-april-2014](http://bit.ly/atljs-react-april-2014)
 
 ???
 
