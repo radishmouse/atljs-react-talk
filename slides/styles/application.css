@@ -217,8 +217,8 @@ a {
 .remark-slide-content.small-code .remark-code {
   font-size: 15px;
   font-size: 1.5rem;
-  line-height: 17.5px;
-  line-height: 1.75rem; }
+  line-height: 16px;
+  line-height: 1.6rem; }
 
 .remark-slide-content.s-inverse h1 {
   color: #f5f4f1; }

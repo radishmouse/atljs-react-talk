@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/jsx">
+    /**
+     * @jsx React.DOM
+     */
+
+  var InputComponent = React.createClass({
+      render: function () {
+          return (
+            <input></input>
+          );
+      }
+  });
+
+  var OuputComponent = React.createClass({
+      render: function () {
+          return (
+              <div>{ this.props.value }</div>
+          );
+      }
+  });
+
+  var AppComponent = React.createClass({
+      render: function () {
+          return (
+            <div>
+                <InputComponent />
+                <OuputComponent value="I know kung fu" />
+            </div>
+          );
+      }
+  });
+
+  React.renderComponent(
+    <AppComponent />,
+    document.getElementById('container')
+  );
+    </script>
+  </body>
+</html>

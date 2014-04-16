@@ -266,7 +266,7 @@ name: countdown
 name: components
 template: cover
 
-# Components
+# Component Basics
 
 ---
 
@@ -358,7 +358,7 @@ template: cover
 name: jsx
 template: cover
 
-# JSX
+# JSX Example
 
 ---
 # React components: JavaScript
@@ -566,12 +566,632 @@ React.renderComponent(<HelloMessage name="Professor Falken" />, mountNode);
 
 --
 
-[Live JSX compiler](http://facebook.github.io/react/jsx-compiler.html)
+* Is used throughout these slides
+
+---
+
+# JSX Compiler
+
+![](img/jsx-compiler.png)
+
+[facebook.github.io/react/jsx-compiler.html](http://facebook.github.io/react/jsx-compiler.html)
 ---
 
 name: composition
-# Composition
+template: cover
+
+# Data flow example
+
 ---
+
+# Rot13 converter
+
+![](img/kung-fu.png)
+
+[/data-flow/final.html](/data-flow/)
+
+---
+
+# Rot13 converter
+
+![](img/kung-fu-components.png)
+
+
+---
+
+# Rot13 converter
+
+## What components do we need?
+
+--
+
+* Input
+
+--
+
+* Output
+
+--
+
+* App
+
+
+
+---
+# Rot13 converter
+
+## How will it work?
+
+![](img/rot13-data-flow.png)
+
+
+---
+class: small-code
+# Start with some HTML
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/jsx">
+      /** @jsx React.DOM */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
+```
+
+---
+
+class: small-code
+# Create three components
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/jsx">
+      /** @jsx React.DOM */
+      var InputComponent = React.createClass({
+          render: function () {
+          }
+      });
+
+      var OuputComponent = React.createClass({
+          render: function () {
+          }
+      });
+
+      var AppComponent = React.createClass({
+          render: function () {
+          }
+      });
+    </script>
+  </body>
+</html>
+```
+
+---
+class: small-code
+# (Same slide, but HTML omitted)
+
+```html
+
+
+
+
+
+
+
+
+    <script type="text/jsx">
+      /** @jsx React.DOM */
+      var InputComponent = React.createClass({
+          render: function () {
+          }
+      });
+
+      var OuputComponent = React.createClass({
+          render: function () {
+          }
+      });
+
+      var AppComponent = React.createClass({
+          render: function () {
+          }
+      });
+    </script>
+
+.
+```
+
+---
+class: small-code
+# Add return values
+
+```js
+  var InputComponent = React.createClass({
+      render: function () {
+          return (
+              <input></input>
+          );
+      }
+  });
+
+  var OuputComponent = React.createClass({
+      render: function () {
+          return (
+              <div></div>
+          );
+      }
+  });
+
+  var AppComponent = React.createClass({
+      render: function () {
+          return (
+            <div>
+
+
+            </div>
+          );
+      }
+  });
+
+```
+
+---
+class: small-code
+# Buzzword: Composition
+
+```js
+  var InputComponent = React.createClass({
+      render: function () {
+          return (
+              <input></input>
+          );
+      }
+  });
+
+  var OuputComponent = React.createClass({
+      render: function () {
+          return (
+              <div></div>
+          );
+      }
+  });
+
+  var AppComponent = React.createClass({
+      render: function () {
+          return (
+            <div>
+                <InputComponent />
+                <OuputComponent />
+            </div>
+          );
+      }
+  });
+```
+
+---
+class: small-code
+name: renderComponent
+# Add React.renderComponent
+
+```js
+  var InputComponent = React.createClass({
+      render: function () {
+          return (
+            <input></input>
+          );
+      }
+  });
+
+  var OuputComponent = React.createClass({
+      render: function () {
+          return (
+              <div></div>
+          );
+      }
+  });
+
+  var AppComponent = React.createClass({
+      render: function () {
+          return (
+            <div>
+                <InputComponent />
+                <OuputComponent />
+            </div>
+          );
+      }
+  });
+
+  React.renderComponent(
+    <AppComponent />,
+    document.getElementById('container')
+  );
+```
+
+---
+name: props
+template: cover
+# props
+---
+
+# Passing values via .props
+
+![](img/trickle.png)
+
+---
+class: small-code
+
+# Passing values via .props
+
+
+```js
+  var InputComponent = React.createClass({
+      render: function () {
+          return (
+            <input></input>
+          );
+      }
+  });
+
+  var OuputComponent = React.createClass({
+      render: function () {
+          return (
+              <div>{ this.props.value }</div>
+          );
+      }
+  });
+
+  var AppComponent = React.createClass({
+      render: function () {
+          return (
+            <div>
+                <InputComponent />
+                <OuputComponent value="I know kung fu" />
+            </div>
+          );
+      }
+  });
+
+  React.renderComponent(
+    <AppComponent />,
+    document.getElementById('container')
+  );
+```
+[demo](/data-flow/props.html)
+
+
+---
+
+name: 1direction
+# Data flows in one direction
+
+![](img/1direction.jpg)
+
+---
+
+name: 2direction
+# But it can flow in two directions
+
+
+![](img/2direction.jpg)
+
+---
+
+name: state
+template: cover
+
+# state
+
+---
+
+name: state
+# Passing data via .state
+
+![](img/state.png)
+
+---
+
+name: state
+# Passing data via .state
+
+
+```js
+  var AppComponent = React.createClass({
+      getInitialState: function () {
+          return {
+              value: "I know kung fu!!!!",
+          }
+      },
+      render: function () {
+          return (
+            <div>
+                <InputComponent />
+                <OuputComponent value={ this.state.value } />
+            </div>
+          );
+      }
+  });
+
+  React.renderComponent(
+    <AppComponent />,
+    document.getElementById('container')
+  );
+```
+[demo](/data-flow/state.html)
+---
+name: events
+template: cover
+
+# Events
+
+---
+class: small-code
+# Getting data from the input
+
+```js
+  var InputComponent = React.createClass({
+
+
+
+      render: function () {
+          return (
+            <input
+
+            ></input>
+          );
+      }
+  });
+```
+
+---
+class: small-code
+# Getting data from the input
+
+```js
+  var InputComponent = React.createClass({
+      changeHandler: function (event) {
+          console.log(event.target.value);
+      },
+      render: function () {
+          return (
+            <input
+              onChange={ this.changeHandler }
+            ></input>
+          );
+      }
+  });
+```
+
+[demo](/data-flow/events.html)
+
+---
+class: small-code
+# Sending data to the parent
+
+```js
+  var InputComponent = React.createClass({
+      changeHandler: function (event) {
+          this.props.sendChange(event.target.value);
+      },
+      render: function () {
+          return (
+            <input
+              onChange={ this.changeHandler }
+            ></input>
+          );
+      }
+  });
+```
+
+[demo](/data-flow/events.html)
+
+---
+class: small-code
+# Sending data to the parent
+
+```js
+  var InputComponent = React.createClass({
+      changeHandler: function (event) {
+          this.props.sendChange(event.target.value);
+      },
+      render: function () {
+          return (
+            <input
+              onChange={ this.changeHandler }
+            ></input>
+          );
+      }
+  });
+  var AppComponent = React.createClass({
+      getInitialState: function () {
+          return {
+              value: "I know kung fu!!!!",
+          }
+      },
+
+
+
+
+      },
+      render: function () {
+          return (
+            <div>
+                <InputComponent />
+                <OuputComponent value={ this.state.value} />
+            </div>
+          );
+      }
+  });
+```
+
+
+---
+class: small-code
+# Sending data to the parent
+
+```js
+  var InputComponent = React.createClass({
+      changeHandler: function (event) {
+          this.props.sendChange(event.target.value);
+      },
+      render: function () {
+          return (
+            <input
+              onChange={ this.changeHandler }
+            ></input>
+          );
+      }
+  });
+  var AppComponent = React.createClass({
+      getInitialState: function () {
+          return {
+              value: "I know kung fu!!!!",
+          }
+      },
+      updateValue: function (newValue) {
+
+
+
+      },
+      render: function () {
+          return (
+            <div>
+                <InputComponent sendChange={ this.updateValue }/>
+                <OuputComponent value={ this.state.value} />
+            </div>
+          );
+      }
+  });
+```
+
+
+---
+class: small-code
+# Sending data to the parent
+
+```js
+  var InputComponent = React.createClass({
+      changeHandler: function (event) {
+          this.props.sendChange(event.target.value);
+      },
+      render: function () {
+          return (
+            <input
+              onChange={ this.changeHandler }
+            ></input>
+          );
+      }
+  });
+  var AppComponent = React.createClass({
+      getInitialState: function () {
+          return {
+              value: "I know kung fu!!!!",
+          }
+      },
+      updateValue: function (newValue) {
+        this.setState({
+            value: newValue
+        });
+      },
+      render: function () {
+          return (
+            <div>
+                <InputComponent sendChange={ this.updateValue }/>
+                <OuputComponent value={ this.state.value} />
+            </div>
+          );
+      }
+  });
+```
+
+[demo](/data-flow/events2.html)
+
+---
+name: finally
+# And now...Rot13
+
+```js
+
+
+
+
+  var OuputComponent = React.createClass({
+      render: function () {
+          return (
+              <div>{ this.props.value }</div>
+          );
+      }
+  });
+```
+
+---
+name: finally
+# And now...Rot13
+
+```js
+  var rot13 = function (s) {
+      return s.replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
+  }
+
+  var OuputComponent = React.createClass({
+      render: function () {
+          return (
+              <div>{ rot13(this.props.value) }</div>
+          );
+      }
+  });
+```
+[demo](/data-flow/rot13.html)
+---
+class: small-code
+
+name: completion
+# Completed JavaScript code
+[demo](/data-flow/complete.html)
+
+---
+template: cover
+# Debugging
+
+---
+
+# React Developer Tools
+
+![](img/dev-tools.png)
+
+---
+# React Developer Tools
+
+[demo](/data-flow/complete-buggy.html)
+
+---
+
 name: find-out-more
 template: cover
 

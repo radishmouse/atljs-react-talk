@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/jsx">
+    /**
+     * @jsx React.DOM
+     */
+
+  var InputComponent = React.createClass({
+      changeHandler: function (event) {
+          this.props.sendChange(event.target.value);
+      },
+      render: function () {
+          return (
+            <input
+              onChange={ this.changeHandler }
+            ></input>
+          );
+      }
+  });
+
+  var rot13 = function (s) {
+      return s.replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
+  }
+
+  var OuputComponent = React.createClass({
+      render: function () {
+          return (
+              <div>{ rot13(this.props.value) }</div>
+          );
+      }
+  });
+
+  var AppComponent = React.createClass({
+      getInitialState: function () {
+          return {
+              value: "I know kung fu!!!!",
+          }
+      },
+      updateValue: function (newValue) {
+        this.setState({
+            value: newValue
+        });
+      },
+      render: function () {
+          return (
+            <div>
+                <InputComponent sendChange={ this.updateValue }/>
+                <OuputComponent value={ this.state.value} />
+            </div>
+          );
+      }
+  });
+
+  React.renderComponent(
+    <AppComponent />,
+    document.getElementById('container')
+  );
+    </script>
+  </body>
+</html>
