@@ -15,7 +15,6 @@ tempalte: cover
 [http://bit.ly/atljs-react-2014](http://bit.ly/atljs-react-2014)
 
 ???
-# etc. (*coffee, bourbon, cats, bacon, sushi*)
 
 ---
 name: bnr-logo
