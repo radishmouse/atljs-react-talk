@@ -224,7 +224,7 @@ class: small-code
           return React.DOM.h1(null, message);
         }
       });
-      var bday = new Date("April 18, 2014 08:12:00");
+      var bday = new Date("April 18, 2015 08:12:00");
       setInterval(function() {
         React.renderComponent(
           ExampleApplication({elapsed: bday.getTime() - new Date().getTime()}),

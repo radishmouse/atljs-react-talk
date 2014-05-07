@@ -25,21 +25,23 @@
 
 // Skin
 
-.remark-slide-content.small-code {
-    .remark-code {
-        @include font-in-rems(1.5);
-        @include line-height-in-rems(1.6);
+.remark-slide-content {
+    &.small-code {
+        .remark-code {
+            @include font-in-rems(1.5);
+            @include line-height-in-rems(1.6);
+        }
     }
-}
-.remark-slide-content.s-inverse {
-    @extend .skin-color-green;
+    &.s-inverse {
+        @extend .skin-color-green;
 
-    h1 {
-        color: $color-white;
-    }
+        h1 {
+            color: $color-white;
+        }
 
-    p {
-        color: $color-white;
+        p {
+            color: $color-white;
+        }
     }
 }
 
