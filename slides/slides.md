@@ -12,9 +12,15 @@ tempalte: cover
 
 ## Chris Aquino, Big Nerd Ranch
 
-[http://bit.ly/atljs-react-april-2014](http://bit.ly/atljs-react-april-2014)
 
 ???
+
+---
+
+class: center, middle
+layout: false
+
+## [github.com/radishmouse/atljs-react-talk](https://github.com/radishmouse/atljs-react-talk)
 
 ---
 name: bnr-logo
@@ -183,7 +189,7 @@ class: small-code
           return React.DOM.h1(null, message);
         }
       });
-      var bday = new Date("April 18, 2014 08:12:00");
+      var bday = new Date("April 18, 2015 08:12:00");
       setInterval(function() {
         React.renderComponent(
           ExampleApplication({elapsed: bday.getTime() - new Date().getTime()}),
@@ -497,6 +503,10 @@ React.renderComponent(<HelloMessage name="Professor Falken" />, mountNode);
 
 ---
 # Advantages of JSX
+
+--
+
+* Declarative
 
 --
 
@@ -1435,7 +1445,7 @@ template: cover
 
 --
 
-* updates on as needed
+* updates only as needed
 
 ---
 
@@ -1538,7 +1548,7 @@ template: cover
 ---
 
 
-# React is decoupled from browser
+# No browser needed.
 
 * Virtual DOM
 * Synthetic Events
@@ -1559,14 +1569,14 @@ template: cover
 
 # Today
 
-![](img/nodejs1.png)
+![](img/today.png)
 ???
 Credit: Nicholas C. Zakas
 ---
 
 # Tomorrow
 
-![](img/nodejs2.png)
+![](img/tomorrow.png)
 ???
 Node.js is not replacing back end API.
 Just removing responsibility over the front end.
