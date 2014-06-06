@@ -44,6 +44,13 @@ And, always looking ahead
 name: and-then-react
 template: cover
 
+# React
+
+---
+
+name: and-then-react
+template: cover
+
 # React, a haiku
 
 ---
@@ -226,8 +233,10 @@ template: cover
 ---
 
 # Minimal set of DOM mutations
-
-.center[![](img/DOM_js_72-1.png)]
+<br>
+<br>
+<br>
+.center[![](img/85ef35b33a9a50b16f422fb32c81ff18.png)]
 
 
 ???
@@ -371,6 +380,13 @@ Good example code
 
 Videos and documentation
 
+---
+
+# github.com
+
+## repo: radishmouse/atljs-react-talk
+
+## branch: caquino/att-mobile-hackathon
 
 ---
 name: outro
