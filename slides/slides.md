@@ -51,7 +51,7 @@ template: cover
 name: and-then-react
 template: cover
 
-# React, a haiku
+# a haiku
 
 ---
 template: cover
